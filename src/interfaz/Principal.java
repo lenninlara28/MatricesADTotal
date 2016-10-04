@@ -69,11 +69,23 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel2.setText("N° Filas :");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        txtNumerodeFilas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumerodeFilasKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNumerodeFilas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 30, -1));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel3.setText("N°Columnas :");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
+
+        txtNumerodeColumnas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumerodeColumnasKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNumerodeColumnas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 30, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 360, 90));
@@ -431,6 +443,24 @@ public class Principal extends javax.swing.JFrame {
         JButton botonesD[] = {cmdLlenadoManual, cmdLlenadoAutomatico};
         Helper.deshabilitarBotones(botonesD);
     }//GEN-LAST:event_cmdLlenadoManualActionPerformed
+
+    private void txtNumerodeFilasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerodeFilasKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNumerodeFilasKeyTyped
+
+    private void txtNumerodeColumnasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerodeColumnasKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNumerodeColumnasKeyTyped
 
     /**
      * @param args the command line arguments
