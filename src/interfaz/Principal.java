@@ -166,7 +166,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 340, 250));
 
-        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cant. Num Pares", "Numeros Pares", "Letra C", "Diagonal Principal", "Letra H", "Diagonal Segundaria", "Triangular Superior", "Triangular Inferior", "Traspuesta", "Letra A", "Letra Z", "Letra T", "Letra V", "Letra E", "Letra F", "Letra P", "Letra I", "Letra N", "Letra Y", "Letra X", "Recorrido Uno", "Recorrido Dos" }));
+        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cant. Num Pares", "Numeros Pares", "Letra C", "Diagonal Principal", "Letra H", "Diagonal Segundaria", "Triangular Superior", "Triangular Inferior", "Traspuesta", "Letra A", "Letra Z", "Letra T", "Letra V", "Letra E", "Letra F", "Letra P", "Letra I", "Letra N", "Letra Y", "Letra X", "Recorrido Uno", "Recorrido Dos", "Recorrido Tres" }));
         jPanel1.add(cmbOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, -1, -1));
 
         tblTablaResultado.setModel(new javax.swing.table.DefaultTableModel(
@@ -382,6 +382,9 @@ public class Principal extends javax.swing.JFrame {
                     break;
                 case 21:
                     txtResultado.setText(Helper.recorridoDos(tblTablaInicial));
+                    break;
+                case 22:
+                    txtResultado.setText(Helper.recorrido3(tblTablaInicial));
                     break;
             }
         }
