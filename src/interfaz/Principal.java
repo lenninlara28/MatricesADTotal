@@ -166,7 +166,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 340, 250));
 
-        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cant. Num Pares", "Numeros Pares", "Letra C", "Diagonal Principal", "Letra H", "Diagonal Segundaria", "Triangular Superior", "Triangular Inferior", "Traspuesta", "Letra A", "Letra Z", "Letra T", "Letra V", "Letra E", "Letra F", "Letra P", "Letra I", "Letra N", "Letra Y", "Letra X", "Recorrido Uno", "Recorrido Dos", "Recorrido Tres" }));
+        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cant. Num Pares", "Numeros Pares", "Letra C", "Diagonal Principal", "Letra H", "Diagonal Segundaria", "Triangular Superior", "Triangular Inferior", "Traspuesta", "Letra A", "Letra Z", "Letra T", "Letra V", "Letra E", "Letra F", "Letra P", "Letra I", "Letra N", "Letra Y", "Letra X", "Letra B", "Letra K", "Letra M", "Letra W", "Letra Q", "Letra J", "Letra G", "Letra R", "Figura 1", "Figura 2", "Figura Cruz", "Figura Rombo", "Recorrido Uno", "Recorrido Dos", "Recorrido Tres" }));
         jPanel1.add(cmbOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, -1, -1));
 
         tblTablaResultado.setModel(new javax.swing.table.DefaultTableModel(
@@ -272,8 +272,9 @@ public class Principal extends javax.swing.JFrame {
     private void cmdOperacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdOperacionActionPerformed
         int op, cantPares;
         op = cmbOperaciones.getSelectedIndex();
-        int nf, res;
+        int nf, res, nc;
         nf = Integer.parseInt(txtNumerodeFilas.getText());
+        nc = Integer.parseInt(txtNumerodeColumnas.getText());
         Helper.limpiadoTabla(tblTablaResultado);
         if (nf < 5 || nf > 13) {
             Helper.mensaje(this, "Para Que Todas Las Operaciones Se Den \n"
@@ -378,12 +379,103 @@ public class Principal extends javax.swing.JFrame {
                     Helper.letraX(tblTablaInicial, tblTablaResultado);
                     break;
                 case 20:
-                    txtResultado.setText(Helper.recorridoUno(tblTablaInicial));
+                    if (nf % 2 == 0) {
+                        Helper.mensaje(this, "Para Ver Mejor La Letra ''B'' El Numero De Filas Debe Ser Impar ", 1);
+                    } else {
+                        Helper.letraB(tblTablaInicial, tblTablaResultado);
+                    }
                     break;
                 case 21:
-                    txtResultado.setText(Helper.recorridoDos(tblTablaInicial));
+                    if (nf % 2 == 0) {
+                        Helper.mensaje(this, "Para Ver Mejor La Letra ''K'' El Numero De Filas Debe Ser Impar ", 1);
+                    } else {
+                        Helper.letraK(tblTablaInicial, tblTablaResultado);
+                    }
                     break;
                 case 22:
+                    if (nf % 2 == 0) {
+                        Helper.mensaje(this, "Para Ver Mejor La Letra ''M'' El N°Filas y N°Columnas Debe Ser Impar ", 1);
+                    } else if (nf != nc) {
+                        Helper.mensaje(this, "Para Ver Mejor La Letra ''M'' El N°Filas y N°Columnas Debe Ser Igual ", 1);
+                    } else {
+                        Helper.letraM(tblTablaInicial, tblTablaResultado);
+                    }
+                    break;
+                case 23:
+                    if (nf % 2 == 0) {
+                        Helper.mensaje(this, "Para Ver Mejor La Letra ''W'' El N°Filas y N°Columnas Debe Ser Impar ", 1);
+                    } else if (nf != nc) {
+                        Helper.mensaje(this, "Para Ver Mejor La Letra ''W'' El N°Filas y N°Columnas Debe Ser Igual ", 1);
+                    } else {
+                        Helper.letraW(tblTablaInicial, tblTablaResultado);
+                    }
+                    break;
+                case 24:
+                    if (nf != nc) {
+                        Helper.mensaje(this, "Para Ver Mejor La Letra ''Q'' El N°Filas y N°Columnas Debe Ser Igual ", 1);
+                    } else {
+                        Helper.letraQ(tblTablaInicial, tblTablaResultado);
+                    }
+                    break;
+                case 25:
+                    Helper.letraJ(tblTablaInicial, tblTablaResultado);
+                    break;
+                case 26:
+                    if (nf < 6) {
+                        Helper.mensaje(this, "Para Ver Mejor La Letra ''G'' El N°Filas Debe Ser Mayor a 6  ", 1);
+                    }
+                    Helper.letraG(tblTablaInicial, tblTablaResultado);
+                    break;
+                case 27:
+                    if (nf != nc) {
+                        Helper.mensaje(this, "Para Ver Mejor La Letra ''R'' El N°Filas y N°Columnas Debe Ser Igual ", 1);
+                    } else {
+                        Helper.letraR(tblTablaInicial, tblTablaResultado);
+                    }
+                    break;
+                case 28:
+                    if (nf % 2 != 0) {
+                        Helper.mensaje(this, "Para Ver Mejor La Figura 1 El N°Filas Debe Ser Par y N°Columnas Debe Ser El Antecesor A Ese Numero ", 1);
+                    } else if (nc != nf - 1) {
+                        Helper.mensaje(this, "Para Ver Mejor La Figura 1 El N°Columnas Debe Ser El Antecesor A El N°Filas ", 1);
+                    } else {
+                        Helper.figura1(tblTablaInicial, tblTablaResultado);
+                    }
+                    break;
+                case 29:
+                    if (nf % 2 == 0) {
+                        Helper.mensaje(this, "Para Ver Mejor La Figura 2 El N°Filas Debe Ser Impar y N°Columnas Debe Ser El Sucesor A Ese Numero ", 1);
+                    } else if (nc != nf + 1) {
+                        Helper.mensaje(this, "Para Ver Mejor La Figura 2 El N°Columnas Debe Ser El Sucesor A El N°Filas ", 1);
+                    } else {
+                        Helper.figura2(tblTablaInicial, tblTablaResultado);
+                    }
+                    break;
+                case 30:
+                    if (nf % 2 != 0) {
+                        Helper.mensaje(this, "Para Ver Mejor La Figura Cruz El N°Filas y N°Columnas Deben Ser Pares ", 1);
+                    } else if (nf != nc) {
+                        Helper.mensaje(this, "Para Ver Mejor La Figura De Cruz El N°Filas y N°Columnas Debe Ser Igual ", 1);
+                    } else {
+                        Helper.figuraCruz(tblTablaInicial, tblTablaResultado);
+                        break;
+                    }
+                case 31:
+                    if (nf != nc) {
+                        Helper.mensaje(this, "Para Ver Mejor La Figura Rombo El N°Filas y N°Columnas Debe Ser Igual ", 1);
+                    } else if (nf % 2 == 0) {
+                        Helper.mensaje(this, "Para Ver Mejor La Figura Rombo El N°Filas Debe Ser Impar ", 1);
+                    } else {
+                        Helper.figuraRombo(tblTablaInicial, tblTablaResultado);
+                        break;
+                    }
+                case 32:
+                    txtResultado.setText(Helper.recorridoUno(tblTablaInicial));
+                    break;
+                case 33:
+                    txtResultado.setText(Helper.recorridoDos(tblTablaInicial));
+                    break;
+                case 34:
                     txtResultado.setText(Helper.recorrido3(tblTablaInicial));
                     break;
             }

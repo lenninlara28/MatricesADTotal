@@ -277,7 +277,7 @@
         <Component class="javax.swing.JComboBox" name="cmbOperaciones">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="23">
+              <StringArray count="35">
                 <StringItem index="0" value="Cant. Num Pares"/>
                 <StringItem index="1" value="Numeros Pares"/>
                 <StringItem index="2" value="Letra C"/>
@@ -298,9 +298,21 @@
                 <StringItem index="17" value="Letra N"/>
                 <StringItem index="18" value="Letra Y"/>
                 <StringItem index="19" value="Letra X"/>
-                <StringItem index="20" value="Recorrido Uno"/>
-                <StringItem index="21" value="Recorrido Dos"/>
-                <StringItem index="22" value="Recorrido Tres"/>
+                <StringItem index="20" value="Letra B"/>
+                <StringItem index="21" value="Letra K"/>
+                <StringItem index="22" value="Letra M"/>
+                <StringItem index="23" value="Letra W"/>
+                <StringItem index="24" value="Letra Q"/>
+                <StringItem index="25" value="Letra J"/>
+                <StringItem index="26" value="Letra G"/>
+                <StringItem index="27" value="Letra R"/>
+                <StringItem index="28" value="Figura 1"/>
+                <StringItem index="29" value="Figura 2"/>
+                <StringItem index="30" value="Figura Cruz"/>
+                <StringItem index="31" value="Figura Rombo"/>
+                <StringItem index="32" value="Recorrido Uno"/>
+                <StringItem index="33" value="Recorrido Dos"/>
+                <StringItem index="34" value="Recorrido Tres"/>
               </StringArray>
             </Property>
           </Properties>
