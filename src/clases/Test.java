@@ -40,7 +40,7 @@ public class Test {
         m[4][4] = 4;
         System.out.println(Helper.mostrar(m));
         System.out.println("Recorrido");
-        //System.out.println(Helper.recorrido3());
+        //System.out.println(Helper.recorrido3(m));
 
     }
 }

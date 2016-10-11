@@ -458,8 +458,8 @@ public class Principal extends javax.swing.JFrame {
                         Helper.mensaje(this, "Para Ver Mejor La Figura De Cruz El N°Filas y N°Columnas Debe Ser Igual ", 1);
                     } else {
                         Helper.figuraCruz(tblTablaInicial, tblTablaResultado);
-                        break;
                     }
+                    break;
                 case 31:
                     if (nf != nc) {
                         Helper.mensaje(this, "Para Ver Mejor La Figura Rombo El N°Filas y N°Columnas Debe Ser Igual ", 1);
@@ -467,8 +467,8 @@ public class Principal extends javax.swing.JFrame {
                         Helper.mensaje(this, "Para Ver Mejor La Figura Rombo El N°Filas Debe Ser Impar ", 1);
                     } else {
                         Helper.figuraRombo(tblTablaInicial, tblTablaResultado);
-                        break;
                     }
+                    break;
                 case 32:
                     txtResultado.setText(Helper.recorridoUno(tblTablaInicial));
                     break;
